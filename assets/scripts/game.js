@@ -47,36 +47,4 @@ function addLetterToCell(letter, row, col) {
     }
 }
 
-function isLetter(key) {
-    return key.length === 1 && key.match(/[a-z]/i);
-  }
-
-
-  document.addEventListener('keydown', (event) => {
-    const key = event.key.toLowerCase();
-    if (isLetter(key)) {
-      // Determine the current position to add the letter
-      const row = currentAttempt;
-      const col = lastLetterPosition.column + 1; // Move to the next column
-      if (col < gameConfig.columns) {
-        addLetterToBox(row, col, key);
-        lastLetterPosition = { row, column: col };
-      }
-    } else if (key === 'backspace') {
-      // Remove the last letter from the grid
-      const row = currentAttempt;
-      const col = lastLetterPosition.column;
-      if (col >= 0) {
-        addLetterToBox(row, col, '');
-        lastLetterPosition = { row, column: col - 1 }; // Move to the previous column
-      }
-    } else if (key === 'enter') {
-      // Check if the word is complete
-      if (lastLetterPosition.column + 1 < wordToGuess.length) {
-        console.log('Word is not complete.');
-      } else {
-        console.log('Checking if word is correct...');
-        // Call function to check if the word is correct
-      }
-    }
-  });
+addLetterToCell('A', 0, 0); 
