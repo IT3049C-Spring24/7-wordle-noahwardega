@@ -38,3 +38,17 @@ header h1 {
     place-items: center;
 }
 
+.correct {
+    background-color: #538D4E;
+}
+
+.misplaced {
+    background-color: #B59F3B;
+}
+
+.incorrect {
+    background-color: #3A3A3C;
+}
+
+
+
