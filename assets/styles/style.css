@@ -26,3 +26,15 @@ header h1 {
     place-items: center;
 }
 
+#wordle-grid {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 8px;
+}
+
+#game {
+    height: 70vh;
+    display: grid;
+    place-items: center;
+}
+
