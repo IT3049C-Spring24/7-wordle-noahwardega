@@ -13,7 +13,6 @@ header {
 
 header h1 {
     display: inline-block;
-    margin: 0;
 }
 
 .letter {
@@ -30,6 +29,7 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(5, auto);
     gap: 8px;
+    
 }
 
 #game {
