@@ -1,5 +1,5 @@
-const modeToggle = document.getElementById('mode-toggle');
+const modeToggleSpan = document.getElementById('mode-toggle');
 
-modeToggle.addEventListener('click', function() {
-    console.log('Mode toggle clicked!');
+modeToggleSpan.addEventListener('click', function() {
+    document.body.classList.toggle('light-mode');
 });
