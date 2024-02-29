@@ -38,7 +38,7 @@ function initializeGrid() {
 
 initializeGrid();
 
-function addLetterToCell(letter, row, col) {
+function addLetterToCell(row,col,letter) {
     const cellId = `cell-${row}-${col}`;
     const cell = document.getElementById(cellId);
     if (cell) {
@@ -47,4 +47,26 @@ function addLetterToCell(letter, row, col) {
     }
 }
 
-addLetterToCell('A', 0, 0); 
+function isLetter(key) {
+    return key.length === 1 && key.match(/[a-z]/i);
+  }
+  
+  function isBackspace(key) {
+    return key === "Backspace";
+  }
+  
+  function isEnter(key) {
+    return key === "Enter";
+  }
+  
+  document.addEventListener('keydown', (event) => {
+    if (isLetter(event.key)) {
+      console.log(`Letter: ${event.key}`);
+    }
+    else if (isBackspace(event.key)) {
+      console.log("Backspace");
+    }
+    else if (isEnter(event.key)) {
+      console.log("Enter");
+    }
+  });
