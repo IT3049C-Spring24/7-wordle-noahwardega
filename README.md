@@ -12,14 +12,14 @@ Instructions to this assignment can be found [here](https://it3049c.github.io/As
 <!--- Update the following line with your self-grade --->
 <!--- Check the Rubric on Canvas for a guideline --->
 
-I should get **( )** out of 20 on this assignment.
+I should get **(20 )** out of 20 on this assignment.
 
 ## Self-Reflection:
 - **How long it took me to finish this?**
-
+10 hours
 - **What do you think of this completion time?**
-
+i think its fine
 - **In hindsight, what would you do differently?**
-
+go to class for help 
 - **What resources did you use?**
- 
+ i had to use chatgpt to help me cuz i got stuck
