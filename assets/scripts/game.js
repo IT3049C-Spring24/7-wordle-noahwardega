@@ -74,7 +74,9 @@ function isLetter(key) {
         if (gameState.currentPosition < gameState.wordToGuess.length) {
             console.log("The word is not complete.");
         }
+        
         else if (gameState.currentPosition === gameState.wordToGuess.length) {
+            revealAttemptResult(gameState.wordToGuess, gameState.currentGuess);
             if (gameState.currentGuess === gameState.wordToGuess) {
                 console.log("Congratulations! You've guessed the word correctly.");
             } else {
@@ -98,19 +100,16 @@ let gameState = {
     currentGuess: ""
 };
 
-// Function to check if a word is valid (mock implementation)
 function isWordValid(word) {
-    const validWords = ["apple", "banana", "orange", "grape", "kiwi"]; // Example list of valid words
+    const validWords = ["apple", "banana", "orange", "grape", "kiwi"]; 
     return validWords.includes(word.toLowerCase());
 }
 
-// Function to get a random word (mock implementation)
 function getRandomWord() {
-    const validWords = ["apple", "banana", "orange", "grape", "kiwi"]; // Example list of valid words
+    const validWords = ["apple", "banana", "orange", "grape", "kiwi"]; 
     return validWords[Math.floor(Math.random() * validWords.length)];
 }
 
-// Function to check the position of letters in a guess
 function checkWord(word, guess) {
     const result = [];
     for (let i = 0; i < word.length; i++) {
@@ -125,24 +124,18 @@ function checkWord(word, guess) {
     return result;
 }
 
-// Function to check the user's guess
 function checkGuess(word, guess) {
-    // Check if the word guessed is valid
     if (!isWordValid(guess)) {
         console.log("The word is not valid.");
         return;
     }
 
-    // Check the position of letters in the guess
     const result = checkWord(word, guess);
 
-    // Check if all letters are in the correct position
     if (result.every(status => status === "correct")) {
         console.log("Congratulations! You've guessed the word correctly.");
-        // End the game
     } else {
         console.log("The word is not correct.");
-        // Continue the game or take appropriate action
     }
 }
 
