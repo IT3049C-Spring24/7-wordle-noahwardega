@@ -95,20 +95,33 @@ function isLetter(key) {
 });
 
 let gameState = {
-    wordToGuess: "apple",
+    wordToGuess: '',
     currentAttempt: 0,
     currentPosition: 0,
     currentGuess: ""
 };
 
-function isWordValid(word) {
-    const validWords = ["apple", "banana", "orange", "grape", "kiwi"]; 
-    return validWords.includes(word.toLowerCase());
+async function initGameState() {
+    gameState.wordToGuess = await getRandomWord();
+    console.log('Random word:', gameState.wordToGuess); 
 }
 
-function getRandomWord() {
-    const validWords = ["apple", "banana", "orange", "grape", "kiwi"]; 
-    return validWords[Math.floor(Math.random() * validWords.length)];
+initGameState();
+
+async function isWordValid(word) {
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    if (response.status === 200) {
+        const data = await response.json();
+        return Array.isArray(data);
+    } else {
+        return false;
+    }
+}
+
+async function getRandomWord() {
+    const response = await fetch('https://it3049c-hangman.fly.dev');
+    const data = await response.json();
+    return data.word;
 }
 
 function checkWord(word, guess) {
