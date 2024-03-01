@@ -1,5 +1,6 @@
 const gridDiv = document.getElementById('wordle-grid');
 
+
 function addBoxToGrid(row, col) {
     const cell = document.createElement('div');
     cell.classList.add('letter');
@@ -140,10 +141,7 @@ function checkGuess(word, guess) {
 }
 
 function revealAttemptResult(word, guess) {
-    // Get the result of the current guess
     const result = checkWord(word, guess);
-
-    // Loop over the result and update the grid cells
     for (let i = 0; i < result.length; i++) {
         const cellId = `cell-${gameState.currentAttempt}-${i}`;
         const cell = document.getElementById(cellId);

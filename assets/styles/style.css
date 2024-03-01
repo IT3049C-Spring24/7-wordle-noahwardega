@@ -37,7 +37,7 @@ header h1 {
 
 
 #game {
-    height: 40vh;
+    height: 80vh;
     display: grid;
     place-items: center;
 }
